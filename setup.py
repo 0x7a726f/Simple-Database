@@ -1,6 +1,6 @@
 import sqlite3
 import time
-def create():
+def create(): 
     try:
         databaseNameInput = str(input("-----------------------------------\nType database name :"))
         databaseName = databaseNameInput + ".db"
@@ -16,10 +16,10 @@ def create():
             cursor.execute(columnAdd)
         print("Database created successfully\nOpen manage.py to edit your database.")
         exitInput = input("Create another database? (y/n)")
-        if exitInput == y or exitInput == Y:
+        if exitInput == "y" or exitInput == "Y":
             create()
             connection.close()
-        elif exitInput == n or exitInput == N:
+        elif exitInput == "n" or exitInput == "N":
             connection.close()
             time.sleep(10)
     except:
