@@ -2,20 +2,20 @@ import sqlite3
 import time
 def create(): 
     try:
-        databaseNameInput = str(input("-----------------------------------\nType database name :"))
+        databaseNameInput = str(input("--------------------------------------------\nType database name >>"))
         databaseName = databaseNameInput + ".db"
         connection = sqlite3.connect(databaseName)
         cursor = connection.cursor()
-        tableName = str(input("Table name :"))
+        tableName = str(input("Table name >>"))
         tableCreate = "CREATE TABLE [" + tableName + "] (O TEXT)"
         cursor.execute(tableCreate)
-        columnNumber = int(input("Number of columns :"))
+        columnNumber = int(input("Number of columns >>"))
         for i in range(0,columnNumber):
             columnName = str(input("Column name :"))
             columnAdd = "ALTER TABLE [" + tableName + "] ADD COLUMN [" + columnName + "] varchar(128)"
             cursor.execute(columnAdd)
         print("Database created successfully\nOpen manage.py to edit your database.")
-        exitInput = input("Create another database? (y/n)")
+        exitInput = input("Create another database? (y/n)>>")
         if exitInput == "y" or exitInput == "Y":
             create()
             connection.close()
