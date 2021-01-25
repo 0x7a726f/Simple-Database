@@ -2,7 +2,7 @@ import sqlite3
 import time
 def create(): 
     try:
-        databaseNameInput = str(input("--------------------------------------------\nType database name >>"))
+        databaseNameInput = str(input("============================================\nType database name >>"))
         databaseName = databaseNameInput + ".db"
         connection = sqlite3.connect(databaseName)
         cursor = connection.cursor()
